@@ -15,7 +15,21 @@
 (defun get-navbar()
   (nav '(class "navbar navbar-default navbar-fixed-top")
     (div '(class "container")
-      (div '(class "navbar-header")
+      (list
+        (div '(class "navbar-header")
+          (list
+            (button '(class "navbar-toggle collapsed"
+                      type "button"
+                      data-toggle "collapse"
+                      data-target "#navbar"
+                      aria-expanded "false"
+                      aria-controls "navbar")
+              (list
+                (span '(class "sr-only") "Toggle navigation")
+                (span '(class "icon-bar"))
+                (span '(class "icon-bar"))
+                (span '(class "icon-bar"))))
+            (a '(class "navbar-brand" href "/"))))
         (div '(id "navbar" class "navbar-collapse collapse")
           (ul '(class "nav navbar-nav navbar-right")
             (get-side-menu)))))))
