@@ -49,18 +49,21 @@ yaws: $(YAWS_DIR)/configure
 	@cd $(YAWS_DIR) && make > $(YAWS_MAKE_LOG)
 
 run: compile
-	@ERL_LIBS=$(EBIN_DIRS) $(YAWS_DIR)/bin/yaws -i \
+	$(YAWS_DIR)/bin/yaws -i \
+	-pa `rebar3 path -s" -pa "` \
 	--conf $(APP_DIR)/priv/etc/yaws.conf \
 	--id $(PROJECT)
 
 daemon: compile
-	@ERL_LIBS=$(EBIN_DIRS) $(YAWS_DIR)/bin/yaws \
+	$(YAWS_DIR)/bin/yaws \
+	-pa `rebar3 path -s" -pa "` \
 	-D --heart \
 	--conf $(APP_DIR)/priv/etc/yaws.conf \
 	--id $(PROJECT)
 
 stop:
-	@ERL_LIBS=$(EBIN_DIRS) $(YAWS_DIR)/bin/yaws \
+	$(YAWS_DIR)/bin/yaws \
+	-pa `rebar3 path -s" -pa "` \
 	--stop --id $(PROJECT)
 
 ### >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
