@@ -1,0 +1,23 @@
+a.navbar-brand {
+  float: left;
+  display: inline-block;
+  width: 216px;
+  height: 27px;
+  margin-top: 12px;
+  margin-left: -10px !important;
+  background: url(../images/logo.png) 0 0 no-repeat;
+}
+
+center-block {
+    float: none;
+}
+
+/*
+ * See the Getting Started docs for more information:
+ * http://getbootstrap.com/getting-started/#support-ie10-width
+ */
+@-webkit-viewport { width: device-width; }
+@-moz-viewport    { width: device-width; }
+@-ms-viewport     { width: device-width; }
+@-o-viewport      { width: device-width; }
+@viewport         { width: device-width; }

@@ -12,8 +12,8 @@
         (head
           (list
             (title title)
-            (link '(rel "stylesheet" href "/css/bootstrap-min.css"))
-            (link '(rel "stylesheet" href "/css/bootstrap-slate-min.css"))
+            (link '(rel "stylesheet" href "/css/bootstrap.css"))
+            (link '(rel "stylesheet" href "/css/lfe.css"))
             (script '(src "/js/bootstrap-min.js"))))
         (body
           (main
@@ -94,7 +94,3 @@
           (list
             (h1 "404 - Not Found")
             (div (p message)))))))
-
-
-
-

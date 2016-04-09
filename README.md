@@ -6,6 +6,7 @@
 #### Contents
 
 * [Introduction](#introduction-)
+* [Dependencies](#dependencies-)
 * [Starting](#starting-)
 * [Viewing](#viewing-)
 
@@ -14,6 +15,17 @@
 
 This is a quick demonstration application built using YAWS and LFE, with
 additional supporting libraries.
+
+
+## Dependencies [&#x219F;](#contents)
+
+This demo assumes you have the following installed on your system:
+
+* Erlang
+* ``build-essential`` or the equivalent developer tools (including
+  autotools, ``make``, and ``gcc``)
+* ``rebar3``
+* Any system-specific YAWS dependencies (e.g., ``libpam0g-dev`` on Ubuntu)
 
 
 ## Starting [&#x219F;](#contents)
