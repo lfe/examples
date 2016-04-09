@@ -60,8 +60,6 @@ browser:
 
 This should load up a page that looks like the following:
 
-priv/www/images/screenshot.png
-
 [![][screen]][screen-large]
 
 [screen]: priv/www/images/screenshot-thumb.png
