@@ -43,4 +43,4 @@ priv/www/images/screenshot.png
 [![][screen]][screen-large]
 
 [screen]: priv/www/images/screenshot-thumb.png
-[screen-large]: priv/www/images/screenshot.png
+[screen-large]: https://raw.githubusercontent.com/lfex/yaws-sample-app/master/priv/www/images/screenshot.png
