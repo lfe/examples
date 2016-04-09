@@ -71,6 +71,9 @@ stop:
 ### Docs make targets
 ### >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+## Note for this project there are no slate docs, but if you want, you can
+## generate lodox LFE docs.
+
 DOCS_DIR = $(ROOT_DIR)/docs
 GUIDE_DIR = $(DOCS_DIR)/user-guide
 GUIDE_BUILD_DIR = $(GUIDE_DIR)/build
@@ -82,6 +85,7 @@ LOCAL_DOCS_HOST = localhost
 LOCAL_DOCS_PORT = 5099
 
 $(SLATE_GIT_HACK):
+	@mkdir -p $(DOCS_DIR)
 	@ln -s $(ROOT_DIR)/.git $(DOCS_DIR)
 
 docs-setup:
@@ -94,7 +98,8 @@ docs-clean:
 
 docs-lodox:
 	@echo
-	@rebar3 lfe lodox
+	@mkdir -p $(DOCS_DIR)
+	@rebar3 as docs lfe lodox
 
 docs-slate:
 	@echo
@@ -105,7 +110,7 @@ docs-slate:
 docs: clean compile docs-clean $(SLATE_GIT_HACK)
 	@echo "\nBuilding docs ...\n"
 	@make docs-lodox
-	@make docs-slate
+	#@make docs-slate
 
 devdocs: docs
 	@echo
@@ -122,7 +127,7 @@ setup-temp-repo: $(SLATE_GIT_HACK)
 
 teardown-temp-repo:
 	@echo "\nTearing down temporary gh-pages repos ..."
-	@rm $(DOCS_DIR)/.git $(GUIDE_DIR)/Gemfile.lock
+	-@rm $(DOCS_DIR)/.git $(GUIDE_DIR)/Gemfile.lock
 	@rm -rf $(DOCS_PROD_DIR)/.git $(DOCS_PROD_DIR)/*/.git
 
 publish-docs: docs setup-temp-repo
