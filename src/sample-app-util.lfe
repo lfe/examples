@@ -1,9 +1,9 @@
 (defmodule sample-app-util
   (export all))
 
-(defun get-sample-app-version ()
-  (lutil:get-app-src-version "src/sample-app.app.src"))
+(defun get-version ()
+  (lutil:get-app-version 'lfeyawsdemo))
 
 (defun get-versions ()
-  (++ (lutil:get-version)
-      `(#(sample-app ,(get-sample-app-version)))))
+  (++ (lutil:get-versions)
+      `(#(lfeyawsdemo ,(get-version)))))
