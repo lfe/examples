@@ -23,10 +23,10 @@ build.
 After a successful ``make run`` you will see output like the following:
 
 ```
-=INFO REPORT==== 8-Apr-2016::19:04:22 ===
+=INFO REPORT==== 8-Apr-2016::19:50:15 ===
 yaws debug:Running with id="lfeyawsdemo"
 Running with debug checks turned on (slower server)
-Logging to directory "yaws-sample-app/logs"
+Logging to directory "lfeyawsdemo/log"
 ```
 
 ## Viewing
