@@ -7,28 +7,40 @@
 This is a quick demonstration application built using YAWS and LFE, with
 additional supporting libraries.
 
-## Use
+## Starting
 
-To run the Docker image you need to have docker installed and running. Then
-simply run the following:
-
-```bash
-$ docker run -p 5099:5099 -t oubiwann/lfe-yaws-sample-app:latest
-```
-
-You don't need the source code for that command; it will pull from Docker Hub.
-
-
-## Builing
-
-If you should choose to build the Docker image yourself instead of getting it
-from Docker Hub:
+To run the sample LFE/YAWS app, just do:
 
 ```bash
-$ git clone git@github.com:oubiwann/docker-lfe-yaws-sample-app.git
-$ cd docker-lfe-yaws-sample-app
-$ make docker-build
-$ make docker-run
+$ make run
 ```
 
-For more details, you'll just need to read the blog posts linked above ;-)
+This will download and build the dependencies as well as attempt to compile
+YAWS for you. If you are not running on Linux, this may not work and you will
+need to swtch to ``_build/default/lib/yaws``, scan the ``README``s and then
+build.
+
+After a successful ``make run`` you will see output like the following:
+
+```
+=INFO REPORT==== 8-Apr-2016::19:04:22 ===
+yaws debug:Running with id="lfeyawsdemo"
+Running with debug checks turned on (slower server)
+Logging to directory "yaws-sample-app/logs"
+```
+
+## Viewing
+
+Once your ``make run`` command shows YAWS starting, it's ready to view in a
+browser:
+
+* [localhost:5099](http://localhost:5099/)
+
+This should load up a page that looks like the following:
+
+priv/www/images/screenshot.png
+
+[![][screen]][screen-large]
+
+[screen]: priv/www/images/screenshot-thumb.png
+[screen-large]: priv/www/images/screenshot.png
