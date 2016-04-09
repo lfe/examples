@@ -2,12 +2,21 @@
 
 *An example LFE/YAWS Web App*
 
-## Introduction
+
+#### Contents
+
+* [Introduction](#introduction-)
+* [Starting](#starting-)
+* [Viewing](#viewing-)
+
+
+## Introduction [&#x219F;](#contents)
 
 This is a quick demonstration application built using YAWS and LFE, with
 additional supporting libraries.
 
-## Starting
+
+## Starting [&#x219F;](#contents)
 
 To run the sample LFE/YAWS app, just do:
 
@@ -29,7 +38,8 @@ Running with debug checks turned on (slower server)
 Logging to directory "lfeyawsdemo/log"
 ```
 
-## Viewing
+
+## Viewing [&#x219F;](#contents)
 
 Once your ``make run`` command shows YAWS starting, it's ready to view in a
 browser:
