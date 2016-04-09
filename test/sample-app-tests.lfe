@@ -1,4 +1,4 @@
-(defmodule unit-sample-app-tests
+(defmodule sample-app-tests
   (behaviour ltest-unit))
 
 (include-lib "ltest/include/ltest-macros.lfe")
