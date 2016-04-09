@@ -19,6 +19,6 @@
                    "joined path: ~p~n"
                    "arg-data: ~p~n~n"))
           (msg-args `(,path ,joined-path ,arg-data)))
-    (io:format msg msg-args)
+    (logjam:error msg msg-args)
     (sample-app-content:four-oh-four
       (++ (strong "Unmatched Route: ") joined-path)))))

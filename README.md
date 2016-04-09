@@ -1,4 +1,4 @@
-# sample-app
+# lfeyawsdemo
 
 *An example LFE/YAWS Web App*
 
