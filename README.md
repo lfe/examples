@@ -9,6 +9,7 @@
 * [Dependencies](#dependencies-)
 * [Starting](#starting-)
 * [Viewing](#viewing-)
+* [Docker](#docker-)
 
 
 ## Introduction [&#x219F;](#contents)
@@ -24,8 +25,8 @@ This demo assumes you have the following installed on your system:
 * Erlang
 * ``build-essential`` or the equivalent developer tools (including
   autotools, ``make``, and ``gcc``)
-* ``rebar3``
 * Any system-specific YAWS dependencies (e.g., ``libpam0g-dev`` on Ubuntu)
+* ``rebar3``
 
 
 ## Starting [&#x219F;](#contents)
@@ -64,3 +65,12 @@ This should load up a page that looks like the following:
 
 [screen]: priv/www/images/screenshot-thumb.png
 [screen-large]: https://raw.githubusercontent.com/lfex/yaws-sample-app/master/priv/www/images/screenshot.png
+
+
+## Docker [&#x219F;](#contents)
+
+This project was originally derrived from the
+[LFE/YAWS Docker sample app](https://github.com/lfex/docker-lfe-yaws-sample-app).
+However, after that code was used to generate the lfeyawsdemo project, the
+original was updated to use the new lfeyawsdemo project. As such, both projects
+now use the same code.
