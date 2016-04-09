@@ -14,10 +14,10 @@
   ;; When nothing matches, do this
   ('NOTFOUND
    (let* ((joined-path (++ "/" (string:join path "/")))
-          (msg (++ "Unmatched route!~n~n"
-                   "Path-info: ~p~n"
-                   "joined path: ~p~n"
-                   "arg-data: ~p~n~n"))
+          (msg (++ "Unmatched route!~n"
+                   "\tPath info: ~p~n"
+                   "\tJoined path: ~p~n"
+                   "\tArg data: ~p"))
           (msg-args `(,path ,joined-path ,arg-data)))
     (logjam:error msg msg-args)
     (sample-app-content:four-oh-four
