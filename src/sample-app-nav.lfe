@@ -1,7 +1,7 @@
 (defmodule sample-app-nav
   (export all))
 
-(include-file "deps/exemplar/include/html-macros.lfe")
+(include-lib "exemplar/include/html-macros.lfe")
 
 (defun get-side-menu ()
   (list

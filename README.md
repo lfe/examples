@@ -1,16 +1,11 @@
 # sample-app
 
-*An example LFE/YAWS Web App Running on Docker*
+*An example LFE/YAWS Web App*
 
 ## Introduction
 
-This repo is featured in
-[this](http://blog.lfe.io/tutorials/2014/12/07/1837-running-lfe-in-docker/) as
-well as
-[this one](http://blog.lfe.io/tutorials/2015/11/28/2110-lfe-yaws-docker-update/).
-The former goes into more detail on how to run LFE in docker, which the second
-one is an update showing how to use the Docker image genereated from this repo
-as quickly as possible.
+This is a quick demonstration application built using YAWS and LFE, with
+additional supporting libraries.
 
 ## Use
 
