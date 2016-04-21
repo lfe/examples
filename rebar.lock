@@ -47,6 +47,6 @@
        {ref,"ebc8523047c53764c7daca6be187600fd381cbf9"}},
   1},
  {<<"yaws">>,
-  {git,"git://github.com/klacke/yaws.git",
-       {ref,"9ec143595747edee4b500944adb7388632987917"}},
-  1}].
+  {git,"git://github.com/oubiwann/yaws.git",
+       {ref,"7f98c0510eb24fbf1e3e3859c01695dd71caad32"}},
+  0}].
