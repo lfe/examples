@@ -1,6 +1,6 @@
 # lfeyawsdemo
 
-*An example LFE/YAWS Web App*
+*A Sample LFE+YAWS Web Application*
 
 
 #### Contents

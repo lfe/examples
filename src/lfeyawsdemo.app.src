@@ -2,7 +2,7 @@
 {application, lfeyawsdemo,
  [
   %% A quick description of the application.
-  {description, "An example LFE/YAWS Web App"},
+  {description, "A Sample LFE+YAWS Web Application"},
 
   %% The version of the application
   {vsn, "0.1.0"},
