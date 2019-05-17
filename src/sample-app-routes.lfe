@@ -11,6 +11,8 @@
     (sample-app-content:get-content id arg-data))
   ('GET "/relation/:userid/:accountid"
     (sample-app-content:get-content userid accountid arg-data))
+  ('GET "/version"
+    (sample-app-content:get-version-content arg-data))
   ;; When nothing matches, do this
   ('NOTFOUND
    (let* ((joined-path (++ "/" (string:join path "/")))

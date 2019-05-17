@@ -10,6 +10,7 @@
     (li (a '(href "/content/2") "/content/2"))
     (li (a '(href "/content/3") "/content/3"))
     (li (a '(href "/relation/1/2") "/relation/1/2"))
+    (li (a '(href "/version") "/version"))
     (li (a '(href "/bob") "404"))))
 
 (defun get-navbar()

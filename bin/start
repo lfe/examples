@@ -1,0 +1,3 @@
+#!/bin/sh
+
+yaws -i -pa `rebar3 path -s" -pa "` --conf priv/etc/yaws.conf

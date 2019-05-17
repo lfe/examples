@@ -2,3 +2,4 @@ ebin/*
 _build/*
 docs/*
 log/*
+.DS_Store

@@ -5,7 +5,7 @@
   {description, "A Sample LFE+YAWS Web Application"},
 
   %% The version of the application
-  {vsn, "0.1.0"},
+  {vsn, "0.2.0"},
 
   %% All modules used by the application.
   {modules,
@@ -25,16 +25,7 @@
     stdlib
    ]},
 
-  %% OTP application loader will load, but not start, included apps. Again
-  %% this can be ignored as well.  To load but not start an application it
-  %% is easier to include it in the .rel file followed by the atom 'none'
-  {included_applications, []},
-
-  %%
-  {mod, {}},
-
-  %% configuration parameters similar to those in the config file specified
-  %% on the command line. can be fetched with gas:get_env
-  {env, []}
+  %% Files
+  {files, ["src", "priv", "bin", "rebar.*", "lfe.*", "README.md"]}
  ]
 }.

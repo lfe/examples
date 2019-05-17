@@ -9,7 +9,6 @@
 * [Dependencies](#dependencies-)
 * [Starting](#starting-)
 * [Viewing](#viewing-)
-* [Docker](#docker-)
 
 
 ## Introduction [&#x219F;](#contents)
@@ -20,13 +19,7 @@ additional supporting libraries.
 
 ## Dependencies [&#x219F;](#contents)
 
-This demo assumes you have the following installed on your system:
-
-* Erlang
-* ``build-essential`` or the equivalent developer tools (including
-  autotools, ``make``, and ``gcc``)
-* Any system-specific YAWS dependencies (e.g., ``libpam0g-dev`` on Ubuntu)
-* ``rebar3``
+This demo assumes you have `docker` installed on your system -- that's it!
 
 
 ## Starting [&#x219F;](#contents)
@@ -37,25 +30,26 @@ To run the sample LFE/YAWS app, just do:
 $ make run
 ```
 
-This will download and build the dependencies as well as attempt to compile
-YAWS for you. If you are not running on Linux, this may not work and you will
-need to swtch to ``_build/default/lib/yaws``, scan the ``README``s and then
-build.
+Or, if you don't want to download this repo, you can just do this instead:
 
-After a successful ``make run`` you will see output like the following:
+```bash
+$ docker run -it -p 5099:5099 lfex/lfeyawsdemo
+```
+
+The make target will build and run the app, the `docker` command will just 
+download the pre-build Docker image.
+
+After a short while, you will see output like the following:
 
 ```
-=INFO REPORT==== 8-Apr-2016::19:50:15 ===
-yaws debug:Running with id="lfeyawsdemo"
-Running with debug checks turned on (slower server)
-Logging to directory "lfeyawsdemo/log"
+2019-05-17 00:41:19.894 [<0.134.0>] [info] Yaws: Listening to 0.0.0.0:5099 for <1> virtual servers:
+ - http://localhost:5099 under /lfeyawsdemo/priv/www
 ```
 
 
 ## Viewing [&#x219F;](#contents)
 
-Once your ``make run`` command shows YAWS starting, it's ready to view in a
-browser:
+As soon as you see the above message in the output, you're ready to visit the site:
 
 * [localhost:5099](http://localhost:5099/)
 
@@ -63,14 +57,11 @@ This should load up a page that looks like the following:
 
 [![][screen]][screen-large]
 
+If you're curious about the dependencies and versions, there's a page for that, too ;-)
+
+[![][screen-versions]][screen-versions-large]
+
 [screen]: priv/www/images/screenshot-thumb.png
 [screen-large]: https://raw.githubusercontent.com/lfex/yaws-sample-app/master/priv/www/images/screenshot.png
-
-
-## Docker [&#x219F;](#contents)
-
-This project was originally derrived from the
-[LFE/YAWS Docker sample app](https://github.com/lfex/docker-lfe-yaws-sample-app).
-However, after that code was used to generate the lfeyawsdemo project, the
-original was updated to use the new lfeyawsdemo project. As such, both projects
-now use the same code.
+[screen-versions]: priv/www/images/screenshot-versions-thumb.png
+[screen-versions-large]: https://raw.githubusercontent.com/lfex/yaws-sample-app/master/priv/www/images/screenshot-versions.png

@@ -49,6 +49,24 @@
               (div
                 (p "This is the main page. Links are to the left."))))))))
 
+(defun get-version-content (arg-data)
+  "1-arity content API function.
+
+  This function generates its HTML from scratch."
+  (let ((title "Version Page"))
+    (lfest-html-resp:ok
+        (base-sidebar-page
+          title
+          (div '(class "col-md-3 col-sm-4 sidebar")
+            (ul '(class "nav nav-stacked nav-pills")
+              (sample-app-nav:get-side-menu)))
+          (div
+            (list
+              (h1 title)
+              (h2 "Versions")
+              (pre
+                (lfe_io:format1 "~p" `(,(sample-app-util:get-versions))))))))))
+
 (defun get-content (item-id arg-data)
   "2-arity content API.
 
