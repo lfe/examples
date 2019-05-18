@@ -1,11 +1,9 @@
-FROM lfex/yaws:latest
+FROM lfex/yaws-dev
 
 COPY . /lfeyawsdemo/
 WORKDIR /lfeyawsdemo
-RUN apk add --update git && \
-    rebar3 compile && \
-    mkdir log && \
-    apk del git && \
-    rm -rf /var/cache/apk/*
+RUN rebar3 compile && \
+    mkdir ebin log && \
+    rm -rf _build/default/lib/yaws
 
 ENTRYPOINT [ "./bin/start" ]
