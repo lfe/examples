@@ -6,4 +6,5 @@
 
 (defun get-versions ()
   (++ (lutil:get-versions)
+      `(#(yaws ,(lutil:get-app-version 'yaws)))
       `(#(lfeyawsdemo ,(get-version)))))
