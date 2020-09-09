@@ -1,0 +1,6 @@
+-sname 'rebar3-lfe-otp-release'
+
+-setcookie 'rebar3-lfe-otp-release_cookie'
+
++K true
++A30
