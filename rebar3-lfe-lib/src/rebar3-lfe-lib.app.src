@@ -1,0 +1,15 @@
+{application, 'rebar3-lfe-lib',
+ [{description, "An LFE application"},
+  {vsn, git},
+  {registered, []},
+  {mod, {'rebar3-lfe-lib-app', []}},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.
