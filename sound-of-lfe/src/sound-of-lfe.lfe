@@ -45,6 +45,18 @@
     (unkn (io:format "Unsupported command: '~s'~n" `(,unkn))))
   (erlang:halt 0))
 
+;;;;;::=-----------------------=::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;::=-   envelope functions    -=::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;::=-----------------------=::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun attack (len)
+  (list-comp
+    ((<- multi (lists:seq 1 len)))
+    (min (/ multi 1000) 1)))
+
+(defun release (len)
+  (lists:reverse (attack len)))
+
 ;;;;;::=--------------------=::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;::=-   sound functions    -=::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;::=--------------------=::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -124,11 +136,16 @@
   (frequency cycles 1 duration sample-rate))
 
 (defun frequency (cycles start duration sample-rate)
-  (let ((signals (lists:seq start (round (* sample-rate duration))))
-        (step (/ (* 2 cycles (math:pi)) sample-rate)))
-    (list-comp
-      ((<- signal signals))
-      (math:sin (* step signal)))))                              
+  (let* ((signals (lists:seq start (round (* sample-rate duration))))
+         (step (/ (* 2 cycles (math:pi)) sample-rate))
+         (output (list-comp
+                   ((<- signal signals))
+                   (math:sin (* step signal))))
+         (len (length output)))
+    (lists:zipwith3 (lambda (a r o) (* a r o))
+                    (attack len)
+                    (release len)
+                    output)))
 
 (defun frequencies (args-list)
   (lists:flatten
