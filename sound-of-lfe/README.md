@@ -45,6 +45,18 @@ Play two notes sequentially (a C and G):
 $ rebar3 lfe run-escript two-notes
 ```
 
+Run an octave of semi-tones:
+
+``` shell
+$ rebar3 lfe run-escript semi-tones
+```
+
+The opening notes of "Journey of the Sourcer" (by The Eagles), used as the theme song for "The Hithiker's Guide to the Galaxy":
+
+``` shell
+$ rebar3 lfe run-escript hhgg-opening
+```
+
 ## License [&#x219F;](#table-of-contents)
 
 Copyright © 2020, Duncan McGreggor <oubiwann@gmail.com>.
