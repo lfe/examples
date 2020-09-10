@@ -8,7 +8,6 @@
 
 * [About](#about-)
 * [Build](#build-)
-* [Tests](#tests-)
 * [Usage](#usage-)
 * [License](#license-)
 
@@ -47,8 +46,6 @@ $ rebar3 lfe run-escript two-notes
 ```
 
 ## License [&#x219F;](#table-of-contents)
-
-Apache License, Version 2.0
 
 Copyright © 2020, Duncan McGreggor <oubiwann@gmail.com>.
 
