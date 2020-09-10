@@ -51,13 +51,13 @@ Run an octave of semi-tones:
 $ rebar3 lfe run-escript semi-tones
 ```
 
-The opening notes of "Journey of the Sourcer" (by The Eagles), used as the theme song for "The Hithiker's Guide to the Galaxy":
+The opening notes of "Journey of the Sorcerer" (by The Eagles), used as the theme song for "The Hithiker's Guide to the Galaxy":
 
 ``` shell
 $ rebar3 lfe run-escript hhgg-opening
 ```
 
-A little bit more of "Journey of the Sourcer":
+A little bit more of "Journey of the Sorcerer":
 
 ``` shell
 $ rebar3 lfe run-script hhgg-theme
