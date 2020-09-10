@@ -27,7 +27,24 @@ $ rebar3 escriptize
 
 ## Usage [&#x219F;](#table-of-contents)
 
-TBD
+Play a simple sine wave:
+
+
+``` shell
+$ rebar3 lfe run-escript first
+```
+
+Play an A note for 2 seconds:
+
+``` shell
+$ rebar3 lfe run-escript a440
+```
+
+Play two notes sequentially (a C and G):
+
+``` shell
+$ rebar3 lfe run-escript two-notes
+```
 
 ## License [&#x219F;](#table-of-contents)
 

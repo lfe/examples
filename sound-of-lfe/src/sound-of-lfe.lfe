@@ -21,6 +21,12 @@
               (-> (frequency 440 1 (default-sample-rate))
                   (save (++ (out-dir) "a-440-wave.raw"))
                   (play duration))))
+    ("two-notes" (let ((longest 2))
+                   (-> (frequencies
+                        `((261.63 1 ,(default-sample-rate))
+                          (783.99 ,longest ,(default-sample-rate))))
+                       (save (++ (out-dir) "two-notes.raw"))
+                       (play longest))))
     (unkn (io:format "Unsupported command: '~s'~n" `(,unkn))))
   (erlang:halt 0))
 
@@ -37,6 +43,12 @@
     (list-comp
       ((<- signal signals))
       (math:sin (* step signal)))))                              
+
+(defun frequencies (args-list)
+  (lists:flatten
+   (lists:map
+    (lambda (args) (apply #'frequency/3 args))
+    args-list)))
 
 (defun wave (start stop)
   (list-comp
