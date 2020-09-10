@@ -1,6 +1,7 @@
 (defmodule hhgg-theme
   (export
-   (song 0)))
+   (song 0)
+   (song-length 0)))
 
 (include-lib "lfe/include/clj.lfe")
 
