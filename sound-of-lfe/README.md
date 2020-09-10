@@ -57,6 +57,12 @@ The opening notes of "Journey of the Sourcer" (by The Eagles), used as the theme
 $ rebar3 lfe run-escript hhgg-opening
 ```
 
+A little bit more of "Journey of the Sourcer":
+
+``` shell
+$ rebar3 lfe run-script hhgg-theme
+```
+
 ## License [&#x219F;](#table-of-contents)
 
 Copyright © 2020, Duncan McGreggor <oubiwann@gmail.com>.

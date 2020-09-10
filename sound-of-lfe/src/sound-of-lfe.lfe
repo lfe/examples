@@ -1,5 +1,5 @@
 (defmodule sound-of-lfe
-  (export (main 1)))
+  (export all))
 
 (include-lib "lfe/include/clj.lfe")
 
@@ -37,11 +37,15 @@
                      (save (++ (out-dir) "semi-tones.raw"))
                      (play 13)))
     ("hhgg-opening" (-> (list-comp
-                          ((<- note '(g4 d4# c4 g3 c3 c5 c5)))
-                          (sound note 0.2))
+                          ((<- note '(g4 d4# c4 g3 c3 c5)))
+                          (sound note 0.25))
                         (lists:flatten)
                         (save (++ (out-dir) "hhgg-opening.raw"))
                         (play 6)))
+    ("hhgg-theme" (-> (hhgg-theme:song)
+                      (lists:flatten)
+                      (save (++ (out-dir) "hhgg-opening.raw"))
+                      (play 6)))
     (unkn (io:format "Unsupported command: '~s'~n" `(,unkn))))
   (erlang:halt 0))
 
