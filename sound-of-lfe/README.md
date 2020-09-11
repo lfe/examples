@@ -60,7 +60,7 @@ $ rebar3 lfe run-escript hhgg-opening
 A little bit more of "Journey of the Sorcerer":
 
 ``` shell
-$ rebar3 lfe run-script hhgg-theme
+$ rebar3 lfe run-escript hhgg-theme
 ```
 
 ## License [&#x219F;](#table-of-contents)
