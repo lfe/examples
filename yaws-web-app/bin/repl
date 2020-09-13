@@ -1,0 +1,3 @@
+#!/bin/sh
+
+lfe -pa `rebar3 path -s" -pa "`

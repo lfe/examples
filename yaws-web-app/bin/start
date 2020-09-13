@@ -1,0 +1,7 @@
+#!/bin/sh
+
+/opt/erlang/yaws/bin/yaws \
+  -i \
+  -pa /opt/erlang/yaws/ebin \
+  -pa `rebar3 path -s" -pa "` \
+  --conf priv/etc/yaws.conf

@@ -1,0 +1,6 @@
+ebin/*
+_build/*
+docs/*
+log/*
+.DS_Store
+priv/docker/dev/.build
