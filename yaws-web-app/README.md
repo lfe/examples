@@ -33,7 +33,7 @@ $ make run
 Or, if you don't want to download this repo, you can just do this instead:
 
 ```bash
-$ docker run -it -p 5099:5099 lfex/lfeyawsdemo
+$ docker run -it -p 5099:5099 lfex/yaws-web-app-example
 ```
 
 The make target will build and run the app, the `docker` command will just 

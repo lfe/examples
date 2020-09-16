@@ -1,4 +1,4 @@
-IMG_TAG = lfex/lfeyawsdemo
+IMG_TAG = lfex/yaws-web-app-example
 DEV_IMG_TAG = lfex/yaws-dev
 DEV_BUILD_DIR = priv/docker/dev
 
@@ -22,3 +22,6 @@ repl: image
 
 push:
 	docker push $(IMG_TAG)
+
+clean:
+	rm  $(DEV_BUILD_DIR)/.build

@@ -1,0 +1,18 @@
+%% -*- erlang -*-
+{application, lfeapp,
+ [
+  {description, "A Sample LFE+YAWS Web Application"},
+  {vsn, "0.3.0"},
+  {modules,
+   [
+    lfeyawsdemo
+   ]},
+  {registered, []},
+  {applications,
+   [
+    kernel,
+    stdlib
+   ]},
+  {files, ["src", "priv", "bin", "rebar.*", "lfe.*", "README.md"]}
+ ]
+}.

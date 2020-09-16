@@ -1,4 +1,4 @@
-(defmodule lfeyawsdemo
+(defmodule lfeapp
   (export all))
 
 (defun out (arg-data)

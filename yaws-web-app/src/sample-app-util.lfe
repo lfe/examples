@@ -2,9 +2,9 @@
   (export all))
 
 (defun get-version ()
-  (lutil:get-app-version 'lfeyawsdemo))
+  (lanes.util:app-version 'lfeapp))
 
 (defun get-versions ()
-  (++ (lutil:get-versions)
-      `(#(yaws ,(lutil:get-app-version 'yaws)))
-      `(#(lfeyawsdemo ,(get-version)))))
+  (++ (lanes.util:versions)
+      `(#(yaws ,(lanes.util:app-version 'yaws)))
+      `(#(lfeapp ,(get-version)))))

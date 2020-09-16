@@ -2,7 +2,7 @@
   (export all))
 
 (include-lib "exemplar/include/html-macros.lfe")
-(include-lib "lfest/include/lfest-routes.lfe")
+(include-lib "lanes/include/yaws.lfe")
 
 (defroutes
   ('GET "/"
