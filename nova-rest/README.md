@@ -35,11 +35,23 @@ Once you've built the release and started the REPL (which will bring up the app
 in the release), you can access the REST API via `curl`, just like any other
 REST service:
 
-``` shell
+```shell
 $ curl -XPOST \
-  -H "Content-Type: application/json" \
-  -d '{"name": "Spot"}' \
+   -H "Content-Type: application/json" \
+   -d '{"name": "Spot"}' \
   http://127.0.0.1:8080/pet
+```
+
+```json
+TBD
+```
+
+```shell
+$ curl http://127.0.0.1:8080/pet/TBD
+```
+
+```json
+TBD
 ```
 
 ## License [&#x219F;](#table-of-contents)
