@@ -1,32 +1,26 @@
 # nova-rest
 
-[![Build Status][travis badge]][travis]
-[![LFE Versions][lfe badge]][lfe]
-[![Erlang Versions][erlang badge]][versions]
-[![Tag][github tag badge]][github tag]
-[![Downloads][hex downloads]][hex package]
+[![Build Status][travis-badge]][travis]
+[![LFE Versions][lfe-badge]][lfe]
+[![Erlang Versions][erlang-badge]][versions]
 
 [![Project Logo][logo]][logo-large]
 
-*An LFE application*
+*A Nova REST API in  LFE*
 
 ##### Table of Contents
 
-* [About](#about-)
 * [Build](#build-)
 * [Start the Project REPL](#start-the-repl-)
-* [Tests](#tests-)
 * [Usage](#usage-)
 * [License](#license-)
 
-## About [&#x219F;](#table-of-contents)
-
-TBD
 
 ## Build [&#x219F;](#table-of-contents)
 
 ```shell
 $ rebar3 lfe compile
+$ rebar3 lfe release
 ```
 
 # Start the Project REPL [&#x219F;](#table-of-contents)
@@ -35,15 +29,18 @@ $ rebar3 lfe compile
 $ rebar3 lfe repl
 ```
 
-# Tests [&#x219F;](#table-of-contents)
-
-```shell
-$ rebar3 lfe test
-```
-
 ## Usage [&#x219F;](#table-of-contents)
 
-TBD
+Once you've built the release and started the REPL (which will bring up the app
+in the release), you can access the REST API via `curl`, just like any other
+REST service:
+
+``` shell
+$ curl -XPOST \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Spot"}' \
+  http://127.0.0.1:8080/pet
+```
 
 ## License [&#x219F;](#table-of-contents)
 
@@ -58,16 +55,10 @@ Copyright © 2020, Duncan McGreggor <oubiwann@gmail.com>.
 [github]: https://github.com/ORG/nova-rest
 [gitlab]: https://gitlab.com/ORG/nova-rest
 [travis]: https://travis-ci.org/ORG/nova-rest
-[travis badge]: https://img.shields.io/travis/ORG/nova-rest.svg
+[travis-badge]: https://img.shields.io/travis/ORG/nova-rest.svg
 [gh-actions-badge]: https://github.com/ORG/nova-rest/workflows/Go/badge.svg
 [gh-actions]: https://github.com/ORG/nova-rest/actions
 [lfe]: https://github.com/rvirding/lfe
-[lfe badge]: https://img.shields.io/badge/lfe-1.3.0-blue.svg
-[erlang badge]: https://img.shields.io/badge/erlang-19%20to%2023-blue.svg
-[version]: https://github.com/ORG/nova-rest/blob/master/.travis.yml
-[github tags]: https://github.com/ORG/nova-rest/tags
-[github tags badge]: https://img.shields.io/github/tag/ORG/nova-rest.svg
-[github downloads]: https://img.shields.io/github/downloads/ORG/nova-rest/total.svg
-[hex badge]: https://img.shields.io/hexpm/v/nova-rest.svg?maxAge=2592000
-[hex package]: https://hex.pm/packages/nova-rest
-[hex downloads]: https://img.shields.io/hexpm/dt/nova-rest.svg
+[lfe-badge]: https://img.shields.io/badge/lfe-1.3.0-blue.svg
+[erlang-badge]: https://img.shields.io/badge/erlang-19%20to%2023-blue.svg
+[versions]: https://github.com/ORG/nova-rest/blob/master/.travis.yml
