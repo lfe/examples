@@ -33,25 +33,100 @@ $ rebar3 lfe repl
 
 Once you've built the release and started the REPL (which will bring up the app
 in the release), you can access the REST API via `curl`, just like any other
-REST service:
+REST service.
+
+Get all pets:
 
 ```shell
-$ curl -XPOST \
+$ curl --silent \
+  http://127.0.0.1:8080/pet | jq .
+```
+
+```json
+[]
+```
+
+Add a pet:
+
+```shell
+$ curl --silent \
+   -XPOST \
    -H "Content-Type: application/json" \
    -d '{"name": "Spot"}' \
-  http://127.0.0.1:8080/pet
+  http://127.0.0.1:8080/pet | jq .
 ```
 
 ```json
-TBD
+{
+  "id": "3de41a08-2de0-499a-b3c0-01623b01494d",
+  "name": "Spot"
+}
 ```
+
+Get all pets again:
 
 ```shell
-$ curl http://127.0.0.1:8080/pet/TBD
+$ curl --silent \
+  http://127.0.0.1:8080/pet | jq .
 ```
 
 ```json
-TBD
+[
+  {
+    "id": "3de41a08-2de0-499a-b3c0-01623b01494d",
+    "name": "Spot"
+  }
+]
+```
+
+Get a specific pet:
+
+```shell
+$ curl --silent \
+  http://127.0.0.1:8080/pet/3de41a08-2de0-499a-b3c0-01623b01494d | jq .
+```
+
+```json
+{
+  "id": "3de41a08-2de0-499a-b3c0-01623b01494d",
+  "name": "Spot"
+}
+```
+
+Update the pet:
+
+```shell
+$ curl --silent \
+   -XPUT \
+   -H "Content-Type: application/json" \
+   -d '{"name": "Spotty"}' \
+  http://127.0.0.1:8080/pet/3de41a08-2de0-499a-b3c0-01623b01494d | jq .
+```
+
+```json
+{
+  "id": "3de41a08-2de0-499a-b3c0-01623b01494d",
+  "name": "Spotty"
+}
+```
+
+Delete the pet:
+
+```shell
+$ curl --silent \
+   -XDELETE \
+  http://127.0.0.1:8080/pet/3de41a08-2de0-499a-b3c0-01623b01494d
+```
+
+Get all pets again:
+
+```shell
+$ curl --silent \
+  http://127.0.0.1:8080/pet | jq .
+```
+
+```json
+[]
 ```
 
 ## License [&#x219F;](#table-of-contents)

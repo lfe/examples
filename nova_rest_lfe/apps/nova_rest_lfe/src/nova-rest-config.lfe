@@ -6,7 +6,7 @@
    (table-opts 0)))
 
 (defun get-cfg ()
-  (application:get_env 'nova-rest 'ets '()))
+  (application:get_env 'nova_rest_lfe 'ets '()))
 
 (defun table-name ()
   (proplists:get_value 'table-name (get-cfg)))

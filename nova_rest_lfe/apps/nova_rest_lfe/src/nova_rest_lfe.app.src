@@ -1,4 +1,4 @@
-{application, 'nova-rest',
+{application, 'nova_rest_lfe',
  [{description, "An LFE application"},
   {vsn, git},
   {registered, []},
@@ -9,7 +9,7 @@
     nova
    ]},
   {env,[]},
-  {modules, []},
+  {modules, ['nova-rest-app', 'nova-rest-sup', 'nova-rest']},
 
   {licenses, ["Apache 2.0"]},
   {links, []}

@@ -10,7 +10,7 @@
 ;;; --------------------------
 
 (defun start (_type _args)
-  (logger:set_application_level 'nova-rest 'all)
+  (logger:set_application_level 'nova_rest_lfe 'all)
   (logger:info "Starting nova-rest application ...")
   (ets:new (nova-rest-config:table-name)
            (nova-rest-config:table-opts))

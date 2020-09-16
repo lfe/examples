@@ -11,8 +11,8 @@
    (case (ets:lookup (nova-rest-config:table-name) pet-id)
      ('()
       #(status 404))
-     (`#(,pet-id ,name)
-      `#(status 200 #m() ,(json:encode #m(#"id" pet-id #"name" name) '(maps binary))))))
+     (`(#(,pet-id ,name))
+      `#(status 200 #m() ,(json:encode `#m(#"id" ,pet-id #"name" ,name) '(maps binary))))))
   ;;
   ;; GET Handler (all)
   ;;
@@ -30,7 +30,7 @@
         json #m(#"name" ,name)))
    (let* (('true (ets:delete (nova-rest-config:table-name) pet-id))
           ('true (ets:insert (nova-rest-config:table-name) `#(,pet-id ,name))))
-     `#(status 200 #m() ,(json:encode #m(#"id" pet-id #"name" name) '(maps binary)))))
+     `#(status 200 #m() ,(json:encode `#m(#"id" ,pet-id #"name" ,name) '(maps binary)))))
   ;;
   ;; DELETE Handler
   ;;
@@ -41,8 +41,9 @@
   ;;
   ;; POST Handler
   ;;
-  ((`#m(req #m(method #"PUT")
-            json #m(#"name" ,name)))
+  ((`#m(req #m(method #"POST")
+        json #m(#"name" ,name)))
    (let* ((pet-id (list_to_binary (uuid:uuid_to_string (uuid:get_v4))))
           ('true (ets:insert (nova-rest-config:table-name) `#(,pet-id ,name))))
-     `#(status 201 #m() ,(json:encode #m(#"id" ,pet-id #"name" ,name) '(maps binary))))))
+     (logger:debug "Pet ID: ~p" `(,pet-id))
+     `#(status 201 #m() ,(json:encode `#m(#"id" ,pet-id #"name" ,name) '(maps binary))))))
