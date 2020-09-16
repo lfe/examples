@@ -1,0 +1,6 @@
+-sname 'nova-rest'
+
+-setcookie 'nova-rest_cookie'
+
++K true
++A30

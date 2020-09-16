@@ -1,0 +1,16 @@
+{application, 'nova-rest',
+ [{description, "An LFE application"},
+  {vsn, git},
+  {registered, []},
+  {mod, {'nova-rest-app', []}},
+  {applications,
+   [kernel,
+    stdlib,
+    nova
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.
