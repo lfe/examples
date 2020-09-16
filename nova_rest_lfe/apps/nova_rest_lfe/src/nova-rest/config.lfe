@@ -1,5 +1,4 @@
-(defmodule nova-rest-config
-  (behaviour gen_server)
+(defmodule nova-rest.config
   (export
    (get-cfg 0)
    (table-name 0)

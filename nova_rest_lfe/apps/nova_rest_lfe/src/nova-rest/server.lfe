@@ -1,4 +1,4 @@
-(defmodule nova-rest
+(defmodule nova-rest.server
   (behaviour gen_server)
   (export
     ;; gen_server implementation
@@ -10,10 +10,7 @@
     (handle_cast 2)
     (handle_info 2)
     (terminate 2)
-    (code_change 3)
-    ;; server API
-    (pid 0)
-    (echo 1)))
+    (code_change 3)))
 
 ;;; ----------------
 ;;; config functions
@@ -69,13 +66,3 @@
 
 (defun code_change (_old-version state _extra)
   `#(ok ,state))
-
-;;; --------------
-;;; our server API
-;;; --------------
-
-(defun pid ()
-  (erlang:whereis (SERVER)))
-
-(defun echo (msg)
-  (gen_server:call (SERVER) `#(echo ,msg)))

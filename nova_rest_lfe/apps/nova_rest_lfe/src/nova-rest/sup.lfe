@@ -1,4 +1,4 @@
-(defmodule nova-rest-sup
+(defmodule nova-rest.sup
   (behaviour supervisor)
   (export
    ;; supervisor implementation

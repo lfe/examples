@@ -2,14 +2,18 @@
  [{description, "An LFE application"},
   {vsn, git},
   {registered, []},
-  {mod, {'nova-rest-app', []}},
+  {mod, {'nova-rest.app', []}},
   {applications,
    [kernel,
     stdlib,
     nova
    ]},
   {env,[]},
-  {modules, ['nova-rest-app', 'nova-rest-sup', 'nova-rest']},
+  {modules, ['nova-rest.config',
+             'nova-rest.app',
+             'nova-rest.sup',
+             'nova-rest.server'
+             ]},
 
   {licenses, ["Apache 2.0"]},
   {links, []}

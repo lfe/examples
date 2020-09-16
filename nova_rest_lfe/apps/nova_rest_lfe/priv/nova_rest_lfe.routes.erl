@@ -1,7 +1,7 @@
 #{prefix => "",
   security => false,
   routes => [
-    {"/pet", {'nova-rest-controller', 'manage-pet'}, #{methods => [options, get, post]}},
-    {"/pet/:petid", {'nova-rest-controller', 'manage-pet'}, #{methods => [options, get, put, delete]}}
+    {"/pet", {'nova-rest.controllers.pet', 'manage'}, #{methods => [options, get, post]}},
+    {"/pet/:petid", {'nova-rest.controllers.pet', 'manage'}, #{methods => [options, get, put, delete]}}
   ]
 }.
