@@ -20,7 +20,7 @@
 
 ```shell
 $ rebar3 lfe compile
-$ rebar3 lfe release
+$ rebar3 release
 ```
 
 # Start the Project REPL [&#x219F;](#table-of-contents)
