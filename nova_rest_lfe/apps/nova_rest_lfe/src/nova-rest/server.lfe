@@ -12,6 +12,8 @@
     (terminate 2)
     (code_change 3)))
 
+(include-lib "logjam/include/logjam.hrl")
+
 ;;; ----------------
 ;;; config functions
 ;;; ----------------
@@ -56,7 +58,7 @@
   ((`#(EXIT ,_from normal) state)
    `#(noreply ,state))
   ((`#(EXIT ,pid ,reason) state)
-   (io:format "Process ~p exited! (Reason: ~p)~n" `(,pid ,reason))
+   (LOG_ERROR "Process ~p exited! (Reason: ~p)~n" `(,pid ,reason))
    `#(noreply ,state))
   ((_msg state)
    `#(noreply ,state)))

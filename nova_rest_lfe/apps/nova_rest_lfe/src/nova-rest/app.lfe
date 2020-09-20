@@ -5,13 +5,14 @@
     (start 2)
     (stop 0)))
 
+(include-lib "logjam/include/logjam.hrl")
+
 ;;; --------------------------
 ;;; application implementation
 ;;; --------------------------
 
 (defun start (_type _args)
-  (logger:set_application_level 'nova_rest_lfe 'all)
-  (logger:info "Starting nova-rest application ...")
+  (LOG_INFO "Starting nova-rest application ...")
   (ets:new (nova-rest.config:table-name)
            (nova-rest.config:table-opts))
   (nova-rest.sup:start_link))
