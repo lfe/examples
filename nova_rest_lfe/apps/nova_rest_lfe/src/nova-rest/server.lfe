@@ -58,7 +58,7 @@
   ((`#(EXIT ,_from normal) state)
    `#(noreply ,state))
   ((`#(EXIT ,pid ,reason) state)
-   (LOG_ERROR "Process ~p exited! (Reason: ~p)~n" `(,pid ,reason))
+   (log-error "Process ~p exited! (Reason: ~p)~n" `(,pid ,reason))
    `#(noreply ,state))
   ((_msg state)
    `#(noreply ,state)))

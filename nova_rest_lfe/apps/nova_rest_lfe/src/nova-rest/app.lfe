@@ -12,7 +12,7 @@
 ;;; --------------------------
 
 (defun start (_type _args)
-  (LOG_INFO "Starting nova-rest application ...")
+  (log-info "Starting nova-rest application ...")
   (ets:new (nova-rest.config:table-name)
            (nova-rest.config:table-opts))
   (nova-rest.sup:start_link))

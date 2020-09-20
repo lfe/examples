@@ -47,5 +47,5 @@
         json #m(#"name" ,name)))
    (let* ((pet-id (list_to_binary (uuid:uuid_to_string (uuid:get_v4))))
           ('true (ets:insert (nova-rest.config:table-name) `#(,pet-id ,name))))
-     (LOG_DEBUG "Pet ID: ~p" `(,pet-id))
+     (log-debug "Pet ID: ~p" `(,pet-id))
      `#(status 201 #m() ,(json:encode `#m(#"id" ,pet-id #"name" ,name) '(maps binary))))))
