@@ -1,19 +1,33 @@
-.rebar3
-_*
+# Erlang
 .eunit
 *.o
 *.beam
 *.plt
+erl_crash.dump
+.concrete/DEV_MODE
+test/*.beam
+
+# rebar 2.x
+.rebar
+rel/example_project
+ebin/*.beam
+deps
+
+# rebar 3
+.rebar3
+_build/
+_checkouts/
+rebar.lock
+rebar3.crashdump
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Vim
 *.swp
 *.swo
-.erlang.cookie
-ebin
-log
-erl_crash.dump
-.rebar
-logs
-_build
-.idea
-*.iml
-rebar3.crashdump
-*~
+
+# LFE-Nova
+apps/nova_rest_lfe/priv/*.routes.erl
