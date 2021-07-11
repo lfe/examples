@@ -15,3 +15,13 @@ deps
 .rebar3
 _build/
 _checkouts/
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
